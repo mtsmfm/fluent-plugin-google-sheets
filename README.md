@@ -1,8 +1,6 @@
-# Fluent::Plugin::Google::Sheets
+# fluent-plugin-google-sheets
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fluent/plugin/google/sheets`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Fluentd output plugin to store data on Google Sheets.
 
 ## Installation
 
@@ -22,7 +20,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+<match example>
+  @type google_sheets
+
+  credential_file_path path_to_your_service_account_credential
+  spreadsheet_id your_spreadsheet_id
+</match>
+```
 
 ## Development
 
