@@ -1,4 +1,3 @@
-require 'fluent/plugin/google/spreadsheet/version'
 require 'google_drive'
 require 'json'
 

@@ -1,11 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'fluent/plugin/google/sheets/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "fluent-plugin-google-sheets"
-  spec.version       = Fluent::Plugin::Google::Sheets::VERSION
+  spec.version       = '0.1.0'
   spec.authors       = ["Fumiaki MATSUSHIMA"]
   spec.email         = ["mtsmfm@gmail.com"]
 
