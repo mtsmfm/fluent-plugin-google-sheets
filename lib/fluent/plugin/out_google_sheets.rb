@@ -10,6 +10,7 @@ module Fluent
     config_param :keys, default: [] do |val|
       val.split(',')
     end
+    config_param :add_timestamp_column, :bool, default: true
 
     def format(tag, time, record)
       [tag, Time.at(time).strftime('%F %T'), record].to_json + "\n"
@@ -20,7 +21,7 @@ module Fluent
 
       data.each do |tag, xs|
         ws = worksheet(tag)
-        ws.insert_rows(ws.num_rows + 1, xs.map {|_, time, record| [time] + record.values })
+        ws.insert_rows(ws.num_rows + 1, xs.map {|_, time, record| (@add_timestamp_column ? [time] : []) + record.values })
         ws.save
       end
     end
@@ -28,7 +29,7 @@ module Fluent
     private
 
     def headers
-      %w(timestamp) + @keys
+      (@add_timestamp_column ? %w(timestamp) : %w()) + @keys
     end
 
     def worksheet(tag)
