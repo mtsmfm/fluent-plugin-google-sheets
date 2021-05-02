@@ -26,6 +26,8 @@ Or install it yourself as:
 
   credential_file_path path_to_your_service_account_credential
   spreadsheet_id your_spreadsheet_id
+  keys foo,bar # optional
+  add_timestamp_column false # optional, true by default
 </match>
 ```
 
