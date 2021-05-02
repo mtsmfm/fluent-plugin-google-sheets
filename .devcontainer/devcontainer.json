@@ -1,0 +1,7 @@
+{
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/app",
+  "name": "${localWorkspaceFolderBasename}",
+  "initializeCommand": "cp -n .devcontainer/app.env.example .devcontainer/app.env"
+}
