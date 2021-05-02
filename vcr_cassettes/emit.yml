@@ -1,0 +1,573 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.googleapis.com/oauth2/v4/token
+    body:
+      encoding: ASCII-8BIT
+      string: "<OAUTH_REQUEST>"
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Sun, 02 May 2021 13:08:46 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<TOKEN>","expires_in":3599,"token_type":"Bearer"}'
+  recorded_at: Sun, 02 May 2021 13:08:45 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/drive/v3/files/SPREADSHEET_ID?fields=*&supportsAllDrives=true
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - unknown/0.0.0 google-apis-drive_v3/0.5.0 Linux/4.19.104-microsoft-standard
+        (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Sun, 02 May 2021 13:08:45 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/3.0.0 gdcl/1.5.0
+      Authorization:
+      - Bearer <TOKEN>
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Sun, 02 May 2021 13:08:46 GMT
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - frame-ancestors 'self'
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"kind":"drive#file","name":"fluent-plugin-google-sheets test","id":"SPREADSHEET_ID","mimeType":"application/vnd.google-apps.spreadsheet"}'
+  recorded_at: Sun, 02 May 2021 13:08:46 GMT
+- request:
+    method: get
+    uri: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID?fields=sheets.properties
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - unknown/0.0.0 google-apis-sheets_v4/0.4.0 Linux/4.19.104-microsoft-standard
+        (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Sun, 02 May 2021 13:08:46 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/3.0.0 gdcl/1.4.0
+      Authorization:
+      - Bearer <TOKEN>
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Encoding:
+      - gzip
+      Date:
+      - Sun, 02 May 2021 13:08:46 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "sheets": [
+            {
+              "properties": {
+                "sheetId": 1623889650,
+                "title": "Sheet3",
+                "index": 0,
+                "sheetType": "GRID",
+                "gridProperties": {
+                  "rowCount": 1000,
+                  "columnCount": 26
+                }
+              }
+            }
+          ]
+        }
+  recorded_at: Sun, 02 May 2021 13:08:46 GMT
+- request:
+    method: post
+    uri: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID:batchUpdate
+    body:
+      encoding: UTF-8
+      string: '{"requests":[{"addSheet":{"properties":{"gridProperties":{"columnCount":20,"rowCount":100},"index":null,"title":"output.test"}}}]}'
+    headers:
+      User-Agent:
+      - unknown/0.0.0 google-apis-sheets_v4/0.4.0 Linux/4.19.104-microsoft-standard
+        (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Sun, 02 May 2021 13:08:46 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/3.0.0 gdcl/1.4.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <TOKEN>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Encoding:
+      - gzip
+      Date:
+      - Sun, 02 May 2021 13:08:47 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "spreadsheetId": "SPREADSHEET_ID",
+          "replies": [
+            {
+              "addSheet": {
+                "properties": {
+                  "sheetId": 831724609,
+                  "title": "output.test",
+                  "index": 1,
+                  "sheetType": "GRID",
+                  "gridProperties": {
+                    "rowCount": 100,
+                    "columnCount": 20
+                  }
+                }
+              }
+            }
+          ]
+        }
+  recorded_at: Sun, 02 May 2021 13:08:47 GMT
+- request:
+    method: get
+    uri: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID?fields=sheets.data.rowData.values(formattedValue,userEnteredValue,effectiveValue)&ranges=%27output.test%27
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - unknown/0.0.0 google-apis-sheets_v4/0.4.0 Linux/4.19.104-microsoft-standard
+        (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Sun, 02 May 2021 13:08:47 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/3.0.0 gdcl/1.4.0
+      Authorization:
+      - Bearer <TOKEN>
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Encoding:
+      - gzip
+      Date:
+      - Sun, 02 May 2021 13:08:47 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "sheets": [
+            {
+              "data": [
+                {}
+              ]
+            }
+          ]
+        }
+  recorded_at: Sun, 02 May 2021 13:08:47 GMT
+- request:
+    method: post
+    uri: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID:batchUpdate
+    body:
+      encoding: UTF-8
+      string: '{"requests":[{"updateSheetProperties":{"fields":"*","properties":{"gridProperties":{"columnCount":20,"rowCount":101},"index":1,"sheetId":831724609,"title":"output.test"}}}]}'
+    headers:
+      User-Agent:
+      - unknown/0.0.0 google-apis-sheets_v4/0.4.0 Linux/4.19.104-microsoft-standard
+        (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Sun, 02 May 2021 13:08:47 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/3.0.0 gdcl/1.4.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <TOKEN>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Encoding:
+      - gzip
+      Date:
+      - Sun, 02 May 2021 13:08:47 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "spreadsheetId": "SPREADSHEET_ID",
+          "replies": [
+            {}
+          ]
+        }
+  recorded_at: Sun, 02 May 2021 13:08:47 GMT
+- request:
+    method: put
+    uri: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID/values/'output.test'!R1C1:R1C2?valueInputOption=USER_ENTERED
+    body:
+      encoding: UTF-8
+      string: '{"values":[["timestamp","foo"]]}'
+    headers:
+      User-Agent:
+      - unknown/0.0.0 google-apis-sheets_v4/0.4.0 Linux/4.19.104-microsoft-standard
+        (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Sun, 02 May 2021 13:08:47 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/3.0.0 gdcl/1.4.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <TOKEN>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Encoding:
+      - gzip
+      Date:
+      - Sun, 02 May 2021 13:08:48 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "spreadsheetId": "SPREADSHEET_ID",
+          "updatedRange": "output.test!A1:B1",
+          "updatedRows": 1,
+          "updatedColumns": 2,
+          "updatedCells": 2
+        }
+  recorded_at: Sun, 02 May 2021 13:08:48 GMT
+- request:
+    method: post
+    uri: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID:batchUpdate
+    body:
+      encoding: UTF-8
+      string: '{"requests":[{"updateSheetProperties":{"fields":"*","properties":{"gridProperties":{"columnCount":20,"rowCount":102},"index":1,"sheetId":831724609,"title":"output.test"}}}]}'
+    headers:
+      User-Agent:
+      - unknown/0.0.0 google-apis-sheets_v4/0.4.0 Linux/4.19.104-microsoft-standard
+        (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Sun, 02 May 2021 13:08:48 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/3.0.0 gdcl/1.4.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <TOKEN>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Encoding:
+      - gzip
+      Date:
+      - Sun, 02 May 2021 13:08:48 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "spreadsheetId": "SPREADSHEET_ID",
+          "replies": [
+            {}
+          ]
+        }
+  recorded_at: Sun, 02 May 2021 13:08:48 GMT
+- request:
+    method: put
+    uri: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID/values/'output.test'!R2C1:R2C2?valueInputOption=USER_ENTERED
+    body:
+      encoding: UTF-8
+      string: '{"values":[["2021-05-02 13:08:45","bar"]]}'
+    headers:
+      User-Agent:
+      - unknown/0.0.0 google-apis-sheets_v4/0.4.0 Linux/4.19.104-microsoft-standard
+        (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Sun, 02 May 2021 13:08:48 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/3.0.0 gdcl/1.4.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <TOKEN>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Encoding:
+      - gzip
+      Date:
+      - Sun, 02 May 2021 13:08:48 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "spreadsheetId": "SPREADSHEET_ID",
+          "updatedRange": "output.test!A2:B2",
+          "updatedRows": 1,
+          "updatedColumns": 2,
+          "updatedCells": 2
+        }
+  recorded_at: Sun, 02 May 2021 13:08:48 GMT
+recorded_with: VCR 6.0.0
