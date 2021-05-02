@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Sun, 02 May 2021 13:19:45 GMT
+      - Sun, 02 May 2021 13:19:49 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -46,7 +46,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"access_token":"<TOKEN>","expires_in":3599,"token_type":"Bearer"}'
-  recorded_at: Sun, 02 May 2021 13:19:44 GMT
+  recorded_at: Sun, 02 May 2021 13:19:48 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/drive/v3/files/SPREADSHEET_ID?fields=*&supportsAllDrives=true
@@ -62,7 +62,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 02 May 2021 13:19:44 GMT
+      - Sun, 02 May 2021 13:19:48 GMT
       X-Goog-Api-Client:
       - gl-ruby/3.0.0 gdcl/1.5.0
       Authorization:
@@ -81,7 +81,7 @@ http_interactions:
       Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Sun, 02 May 2021 13:19:45 GMT
+      - Sun, 02 May 2021 13:19:49 GMT
       Vary:
       - Origin
       - X-Origin
@@ -107,7 +107,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"kind":"drive#file","name":"fluent-plugin-google-sheets test","id":"SPREADSHEET_ID","mimeType":"application/vnd.google-apps.spreadsheet"}'
-  recorded_at: Sun, 02 May 2021 13:19:45 GMT
+  recorded_at: Sun, 02 May 2021 13:19:49 GMT
 - request:
     method: get
     uri: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID?fields=sheets.properties
@@ -123,7 +123,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 02 May 2021 13:19:45 GMT
+      - Sun, 02 May 2021 13:19:49 GMT
       X-Goog-Api-Client:
       - gl-ruby/3.0.0 gdcl/1.4.0
       Authorization:
@@ -144,7 +144,7 @@ http_interactions:
       Content-Encoding:
       - gzip
       Date:
-      - Sun, 02 May 2021 13:19:45 GMT
+      - Sun, 02 May 2021 13:19:49 GMT
       Server:
       - ESF
       Cache-Control:
@@ -176,16 +176,28 @@ http_interactions:
                   "columnCount": 26
                 }
               }
+            },
+            {
+              "properties": {
+                "sheetId": 107335007,
+                "title": "output.emit",
+                "index": 1,
+                "sheetType": "GRID",
+                "gridProperties": {
+                  "rowCount": 102,
+                  "columnCount": 20
+                }
+              }
             }
           ]
         }
-  recorded_at: Sun, 02 May 2021 13:19:45 GMT
+  recorded_at: Sun, 02 May 2021 13:19:49 GMT
 - request:
     method: post
     uri: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID:batchUpdate
     body:
       encoding: UTF-8
-      string: '{"requests":[{"addSheet":{"properties":{"gridProperties":{"columnCount":20,"rowCount":100},"index":null,"title":"output.emit"}}}]}'
+      string: '{"requests":[{"addSheet":{"properties":{"gridProperties":{"columnCount":20,"rowCount":100},"index":null,"title":"output.emit_without_timestamp"}}}]}'
     headers:
       User-Agent:
       - unknown/0.0.0 google-apis-sheets_v4/0.4.0 Linux/4.19.104-microsoft-standard
@@ -195,7 +207,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 02 May 2021 13:19:45 GMT
+      - Sun, 02 May 2021 13:19:49 GMT
       X-Goog-Api-Client:
       - gl-ruby/3.0.0 gdcl/1.4.0
       Content-Type:
@@ -216,7 +228,7 @@ http_interactions:
       Content-Encoding:
       - gzip
       Date:
-      - Sun, 02 May 2021 13:19:46 GMT
+      - Sun, 02 May 2021 13:19:50 GMT
       Server:
       - ESF
       Cache-Control:
@@ -241,9 +253,9 @@ http_interactions:
             {
               "addSheet": {
                 "properties": {
-                  "sheetId": 107335007,
-                  "title": "output.emit",
-                  "index": 1,
+                  "sheetId": 1885276746,
+                  "title": "output.emit_without_timestamp",
+                  "index": 2,
                   "sheetType": "GRID",
                   "gridProperties": {
                     "rowCount": 100,
@@ -254,10 +266,10 @@ http_interactions:
             }
           ]
         }
-  recorded_at: Sun, 02 May 2021 13:19:45 GMT
+  recorded_at: Sun, 02 May 2021 13:19:50 GMT
 - request:
     method: get
-    uri: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID?fields=sheets.data.rowData.values(formattedValue,userEnteredValue,effectiveValue)&ranges=%27output.emit%27
+    uri: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID?fields=sheets.data.rowData.values(formattedValue,userEnteredValue,effectiveValue)&ranges=%27output.emit_without_timestamp%27
     body:
       encoding: UTF-8
       string: ''
@@ -270,7 +282,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 02 May 2021 13:19:45 GMT
+      - Sun, 02 May 2021 13:19:50 GMT
       X-Goog-Api-Client:
       - gl-ruby/3.0.0 gdcl/1.4.0
       Authorization:
@@ -291,7 +303,7 @@ http_interactions:
       Content-Encoding:
       - gzip
       Date:
-      - Sun, 02 May 2021 13:19:46 GMT
+      - Sun, 02 May 2021 13:19:50 GMT
       Server:
       - ESF
       Cache-Control:
@@ -319,13 +331,13 @@ http_interactions:
             }
           ]
         }
-  recorded_at: Sun, 02 May 2021 13:19:46 GMT
+  recorded_at: Sun, 02 May 2021 13:19:50 GMT
 - request:
     method: post
     uri: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID:batchUpdate
     body:
       encoding: UTF-8
-      string: '{"requests":[{"updateSheetProperties":{"fields":"*","properties":{"gridProperties":{"columnCount":20,"rowCount":101},"index":1,"sheetId":107335007,"title":"output.emit"}}}]}'
+      string: '{"requests":[{"updateSheetProperties":{"fields":"*","properties":{"gridProperties":{"columnCount":20,"rowCount":101},"index":2,"sheetId":1885276746,"title":"output.emit_without_timestamp"}}}]}'
     headers:
       User-Agent:
       - unknown/0.0.0 google-apis-sheets_v4/0.4.0 Linux/4.19.104-microsoft-standard
@@ -335,7 +347,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 02 May 2021 13:19:46 GMT
+      - Sun, 02 May 2021 13:19:50 GMT
       X-Goog-Api-Client:
       - gl-ruby/3.0.0 gdcl/1.4.0
       Content-Type:
@@ -356,7 +368,7 @@ http_interactions:
       Content-Encoding:
       - gzip
       Date:
-      - Sun, 02 May 2021 13:19:46 GMT
+      - Sun, 02 May 2021 13:19:51 GMT
       Server:
       - ESF
       Cache-Control:
@@ -381,13 +393,13 @@ http_interactions:
             {}
           ]
         }
-  recorded_at: Sun, 02 May 2021 13:19:46 GMT
+  recorded_at: Sun, 02 May 2021 13:19:50 GMT
 - request:
     method: put
-    uri: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID/values/'output.emit'!R1C1:R1C2?valueInputOption=USER_ENTERED
+    uri: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID/values/'output.emit_without_timestamp'!R1C1:R1C1?valueInputOption=USER_ENTERED
     body:
       encoding: UTF-8
-      string: '{"values":[["timestamp","foo"]]}'
+      string: '{"values":[["foo"]]}'
     headers:
       User-Agent:
       - unknown/0.0.0 google-apis-sheets_v4/0.4.0 Linux/4.19.104-microsoft-standard
@@ -397,7 +409,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 02 May 2021 13:19:46 GMT
+      - Sun, 02 May 2021 13:19:50 GMT
       X-Goog-Api-Client:
       - gl-ruby/3.0.0 gdcl/1.4.0
       Content-Type:
@@ -418,7 +430,7 @@ http_interactions:
       Content-Encoding:
       - gzip
       Date:
-      - Sun, 02 May 2021 13:19:47 GMT
+      - Sun, 02 May 2021 13:19:51 GMT
       Server:
       - ESF
       Cache-Control:
@@ -439,18 +451,18 @@ http_interactions:
       string: |
         {
           "spreadsheetId": "SPREADSHEET_ID",
-          "updatedRange": "output.emit!A1:B1",
+          "updatedRange": "output.emit_without_timestamp!A1",
           "updatedRows": 1,
-          "updatedColumns": 2,
-          "updatedCells": 2
+          "updatedColumns": 1,
+          "updatedCells": 1
         }
-  recorded_at: Sun, 02 May 2021 13:19:46 GMT
+  recorded_at: Sun, 02 May 2021 13:19:51 GMT
 - request:
     method: post
     uri: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID:batchUpdate
     body:
       encoding: UTF-8
-      string: '{"requests":[{"updateSheetProperties":{"fields":"*","properties":{"gridProperties":{"columnCount":20,"rowCount":102},"index":1,"sheetId":107335007,"title":"output.emit"}}}]}'
+      string: '{"requests":[{"updateSheetProperties":{"fields":"*","properties":{"gridProperties":{"columnCount":20,"rowCount":102},"index":2,"sheetId":1885276746,"title":"output.emit_without_timestamp"}}}]}'
     headers:
       User-Agent:
       - unknown/0.0.0 google-apis-sheets_v4/0.4.0 Linux/4.19.104-microsoft-standard
@@ -460,7 +472,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 02 May 2021 13:19:46 GMT
+      - Sun, 02 May 2021 13:19:51 GMT
       X-Goog-Api-Client:
       - gl-ruby/3.0.0 gdcl/1.4.0
       Content-Type:
@@ -481,7 +493,7 @@ http_interactions:
       Content-Encoding:
       - gzip
       Date:
-      - Sun, 02 May 2021 13:19:47 GMT
+      - Sun, 02 May 2021 13:19:51 GMT
       Server:
       - ESF
       Cache-Control:
@@ -506,13 +518,13 @@ http_interactions:
             {}
           ]
         }
-  recorded_at: Sun, 02 May 2021 13:19:47 GMT
+  recorded_at: Sun, 02 May 2021 13:19:51 GMT
 - request:
     method: put
-    uri: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID/values/'output.emit'!R2C1:R2C2?valueInputOption=USER_ENTERED
+    uri: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID/values/'output.emit_without_timestamp'!R2C1:R2C1?valueInputOption=USER_ENTERED
     body:
       encoding: UTF-8
-      string: '{"values":[["2021-05-02 13:19:44","bar"]]}'
+      string: '{"values":[["bar"]]}'
     headers:
       User-Agent:
       - unknown/0.0.0 google-apis-sheets_v4/0.4.0 Linux/4.19.104-microsoft-standard
@@ -522,7 +534,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Sun, 02 May 2021 13:19:47 GMT
+      - Sun, 02 May 2021 13:19:51 GMT
       X-Goog-Api-Client:
       - gl-ruby/3.0.0 gdcl/1.4.0
       Content-Type:
@@ -543,7 +555,7 @@ http_interactions:
       Content-Encoding:
       - gzip
       Date:
-      - Sun, 02 May 2021 13:19:47 GMT
+      - Sun, 02 May 2021 13:19:52 GMT
       Server:
       - ESF
       Cache-Control:
@@ -564,10 +576,10 @@ http_interactions:
       string: |
         {
           "spreadsheetId": "SPREADSHEET_ID",
-          "updatedRange": "output.emit!A2:B2",
+          "updatedRange": "output.emit_without_timestamp!A2",
           "updatedRows": 1,
-          "updatedColumns": 2,
-          "updatedCells": 2
+          "updatedColumns": 1,
+          "updatedCells": 1
         }
-  recorded_at: Sun, 02 May 2021 13:19:47 GMT
+  recorded_at: Sun, 02 May 2021 13:19:51 GMT
 recorded_with: VCR 6.0.0
