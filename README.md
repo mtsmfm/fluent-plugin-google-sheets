@@ -29,6 +29,15 @@ Or install it yourself as:
 </match>
 ```
 
+### Note
+
+1. Be sure to enable Drive API and Google Sheets API
+
+- https://console.cloud.google.com/apis/library/drive.googleapis.com
+- https://console.cloud.google.com/apis/library/sheets.googleapis.com
+
+2. Be sure to share the spreadsheet with the service account
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -37,5 +46,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/fluent-plugin-google-sheets.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/mtsmfm/fluent-plugin-google-sheets.
